@@ -1,3 +1,7 @@
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
 class Teacher {
     private firstName: string;
     private lastName: string;
