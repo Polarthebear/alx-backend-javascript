@@ -2,6 +2,14 @@ interface Directors extends Teacher {
     numberOfReports: number;
 }
 
+interface PrintTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+function printTeacher(firstName: string, lastName: string): string {
+  return firstName[0] + ". " + lastName;
+}
+
 class Teacher {
     private firstName: string;
     private lastName: string;
@@ -23,14 +31,12 @@ class Teacher {
     }
 }
 
-const teacher = new Teacher("Thato", "Mashigo", true, "New York", "yearsOfExperience", 5, "contract", true);
+const teacher = new Teacher("John", "Doe", true, "New York", "yearsOfExperience", 5, "contract", true);
 
-console.log(teacher.firstName); // "Thato"
-console.log(teacher.lastName); // "Mashigo"
-console.log(teacher.fullTimeEmployee); // true
-console.log(teacher.yearsOfExperience); // 5
-console.log(teacher.contract); // true
+// Create a Director object
+const director: Directors = {
+    ...teacher,
+    numberOfReports: 10,
+};
 
-// Attempt to modify firstName after initialization
-teacher.firstName = "Jane";
-console.log(teacher.firstName); // "Thato" (firstName cannot be modified after initialization)
+console.log(printTeacher(director.firstName, director.lastName)); // Output: J. Doe
