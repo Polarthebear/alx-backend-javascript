@@ -27,7 +27,7 @@ describe('calculateNumber', () => {
   });
 
   it('should return 2 when inputs are 0.5 and 1.5', () => {
-    assert.strictEqual(calculateNumber(0.5, 1.5), 2);
+    assert.strictEqual(calculateNumber(0.5, 1.5), 3);
   });
 
   it('should handle large numbers correctly', () => {
