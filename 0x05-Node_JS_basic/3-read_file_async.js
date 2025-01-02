@@ -1,10 +1,10 @@
+const fs = require('fs');
+
 /**
  * Module to count the students in a CSV file
  * @param: dataPath to the CSV file
  */
 const countStudents = (filePath) => new Promise((resolve, reject) => {
-  const fs = require('fs');
-
   fs.readFile(filePath, 'utf-8', (error, fileContent) => {
     if (error) {
       reject(new Error('Cannot load the database'));
